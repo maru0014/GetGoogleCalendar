@@ -86,8 +86,6 @@ function fetchSchedules(calendarId) {
 /**
  * 取得対象の切り分け
  * @param {CalendarEvent} schedule 個別のCalendarEventクラス
- * @param {RegExp} reExclusion 除外キーワードの正規表現オブジェクト
- * @param {Boolean} allDayExclusion 終日予定の除外フラグ
  * @return {boolean} 真偽値
  */
 function isExclusion(event) {
