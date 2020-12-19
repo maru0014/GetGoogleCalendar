@@ -52,13 +52,9 @@ function getGoogleCalendar() {
 /**
  * GoogleカレンダーからgetEvents
  * @param {Array} calendarIds 取得対象カレンダーIDの配列
- * @param {RegExp} reExclusion 除外キーワードの正規表現オブジェクト
- * @param {Boolean} allDayExclusion 終日予定の除外フラグ
- * @param {data} startDate 個別のCalendarEventクラス
- * @param {data} endDate 個別のCalendarEventクラス
  * @return {Array} 取得結果の二次元配列
  */
-function fetchSchedules(calendarId, reExclusion, allDayExclusion, startDate, endDate) {
+function fetchSchedules(calendarId) {
   const schedules = new Array(); // 配列初期化
   const calendar = CalendarApp.getCalendarById(calendarId); // カレンダー
   const calendarName = calendar.getName(); // カレンダー名
@@ -90,9 +86,11 @@ function fetchSchedules(calendarId, reExclusion, allDayExclusion, startDate, end
 /**
  * 取得対象の切り分け
  * @param {CalendarEvent} schedule 個別のCalendarEventクラス
+ * @param {RegExp} reExclusion 除外キーワードの正規表現オブジェクト
+ * @param {Boolean} allDayExclusion 終日予定の除外フラグ
  * @return {boolean} 真偽値
  */
-function isExclusion(event, reExclusion, allDayExclusion) {
+function isExclusion(event) {
   // 終日イベントはスキップ
   if (allDayExclusion && event.isAllDayEvent()) return true;
 
