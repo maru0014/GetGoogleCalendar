@@ -43,9 +43,11 @@ function getGoogleCalendar() {
 
   if (table.length) {
     sheetSchedules.getRange(2, 1, table.length, table[0].length).setValues(table); // シートに出力
-    spreadSheet.toast(`${table.length}件の予定を取得しました。`, "Googleカレンダー取得完了", 5); // 完了メッセージ表示
+    Logger.log(`${table.length}件の予定を取得しました。`);
+    spreadSheet.toast(`${table.length}件の予定を取得しました。`, 'Googleカレンダー取得完了', 5); // 完了メッセージ表示
   } else {
-    spreadSheet.toast(`取得結果が0件です。`, "Googleカレンダー取得完了", 5); // エラーメッセージ表示
+    Logger.log(`${table.length}件の予定を取得しました。`);
+    spreadSheet.toast('取得結果が0件です。', 'Googleカレンダー取得完了', 5); // エラーメッセージ表示
   }
 }
 
