@@ -77,7 +77,7 @@ function getCalendarEvents(calendarId, calendarName) {
 
   ss.toast(`${calendarName} (${calendarId}) の予定を ${dataRows.length} 件取得しました。`, "取得完了")
   console.timeEnd(calendarId);
-  return `Success: get ${dataRows.length} events.`;
+  return `Success: ${dataRows.length} events.`;
 }
 
 /**
