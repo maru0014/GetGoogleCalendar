@@ -1,0 +1,18 @@
+{
+  "name": "google-calendar-tool",
+  "version": "1.1.0",
+  "description": "Googleカレンダー取得ツール",
+  "scripts": {
+    "prepush:dev": "node -e \"require('fs').copyFileSync('./.clasp.json.dev', './.clasp.json')\"",
+    "prepush:prod": "node -e \"require('fs').copyFileSync('./.clasp.json.prod', './.clasp.json')\"",
+    "prepull:dev": "node -e \"require('fs').copyFileSync('./.clasp.json.dev', './.clasp.json')\"",
+    "prepull:prod": "node -e \"require('fs').copyFileSync('./.clasp.json.prod', './.clasp.json')\"",
+    "push:dev": "clasp push -A ~/.clasprc-codelife.json",
+    "push:prod": "clasp push -A ~/.clasprc-codelife.json",
+    "pull:dev": "clasp pull -A ~/.clasprc-codelife.json",
+    "pull:prod": "clasp pull -A ~/.clasprc-codelife.json"
+  },
+  "devDependencies": {
+    "@types/google-apps-script": "^1.0.56"
+  }
+}
